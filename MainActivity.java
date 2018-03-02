@@ -18,10 +18,12 @@ public class MainActivity extends AppCompatActivity {
     Double width, length, total;   // declare width, length, and result variables
     TextView tvResult;              // the text view that will display the result in MainActivity
 
+    // create final strings for intent keys
     public static final String WIDTH_KEY = "WIDTH_KEY";
     public static final String LENGTH_KEY = "LENGTH_KEY";
     public static final String RESULT_KEY = "RESULT_KEY";
 
+    // create final int for request code
     private static final int MY_REQUEST_CODE = 1001;
 
     @Override
@@ -29,19 +31,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //set up the width and length edit text fields, and result text view
         etWidth = (EditText) findViewById(R.id.editTextWidth);
         etLength = (EditText) findViewById(R.id.editTextLength);
         tvResult = (TextView) findViewById(R.id.textViewMainResult);
 
-
     }
 
     public void buttonShowResultClick(View view) {
+        // parse from string to double
         width = Double.parseDouble(etWidth.getText().toString());
         length = Double.parseDouble(etLength.getText().toString());
 
+        // calculate square footage
         total = width * length;
 
+        // create an intent
         Intent ResultIntent = new Intent(this, ResultActivity.class);
         ResultIntent.putExtra(WIDTH_KEY, width);
         ResultIntent.putExtra(LENGTH_KEY, length);

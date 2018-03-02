@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
 
+    // declare variables
     Double width;
     Double length;
     Double total;
@@ -19,15 +20,18 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
+        // connect variables with text views in xml file
         tvResultWidth = (TextView) findViewById(R.id.textViewResultWidth);
         tvResultLength = (TextView) findViewById(R.id.textViewResultLength);
         tvResult = (TextView) findViewById(R.id.textViewResult);
 
+        // create a bundle
         Bundle extras = getIntent().getExtras();
         width = extras.getDouble("WIDTH_KEY");
         length = extras.getDouble("LENGTH_KEY");
         total = extras.getDouble("RESULT_KEY");
 
+        // set text
         tvResultWidth.setText(width.toString() + " ft");
         tvResultLength.setText(length.toString() + " ft");
         tvResult.setText(total.toString()  + " ft2");
