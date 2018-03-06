@@ -20,7 +20,7 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        // connect variables with text views in xml file
+        // connect variables with text views in the layout
         tvResultWidth = (TextView) findViewById(R.id.textViewResultWidth);
         tvResultLength = (TextView) findViewById(R.id.textViewResultLength);
         tvResult = (TextView) findViewById(R.id.textViewResult);

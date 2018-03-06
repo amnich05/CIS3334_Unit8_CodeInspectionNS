@@ -8,15 +8,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText etWidth;               // the edit text field for the entered width
-    EditText etLength;              // the edit text field for the entered length
-    Double width, length, total;   // declare width, length, and result variables
-    TextView tvResult;              // the text view that will display the result in MainActivity
+    EditText etWidth;                   // the edit text field for the entered width
+    EditText etLength;                  // the edit text field for the entered length
+    Double width, length, total;        // declare width, length, and result variables
+    TextView tvResult;                  // the text view that will display the result in MainActivity
 
     // create final strings for intent keys
     public static final String WIDTH_KEY = "WIDTH_KEY";
@@ -53,9 +52,6 @@ public class MainActivity extends AppCompatActivity {
         ResultIntent.putExtra(RESULT_KEY, total);
         startActivityForResult(ResultIntent, MY_REQUEST_CODE);
 
-    //    tvResult.setText("\nWidth is " + width
-    //                    + "\nLength is " + length
-    //                    + "\nTotal Flooring Needed is: " + result);
     }
 
     @Override
